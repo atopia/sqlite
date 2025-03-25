@@ -1,0 +1,16 @@
+--- /dev/null	2025-03-25 10:00:13.500618547 +0100
++++ src/Makefile	2025-03-25 16:20:06.632376309 +0100
+@@ -0,0 +1,13 @@
++all: sqlite.lib.so install/sqlite/sqlite3.h
++
++install/sqlite/sqlite3.h: install/include/sqlite
++	cp sqlite3.h $<
++
++install/include/sqlite:
++	install -m 755 -d $@
++
++sqlite.lib.so: sqlite.o
++	$(CC) $(MAKE_SHARED_LINKER_FLAGS) $< -o $@
++
++sqlite.o: sqlite3.c
++	$(CC) -DSQLITE_ENABLE_RTREE $(CFLAGS) -c $< -o $@
