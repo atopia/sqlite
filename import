@@ -12,5 +12,5 @@ DIR(sqlite) := src
 
 UNZIP_OPT := -j
 
-PATCHES := $(addprefix patches/, build.patch)
+PATCHES := $(addprefix patches/, build.patch sqlite3.pc.patch)
 PATCH_OPT := -p1 -d src
