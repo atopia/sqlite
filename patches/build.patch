@@ -1,12 +1,12 @@
---- /dev/null	2025-03-25 10:00:13.500618547 +0100
-+++ src/Makefile	2025-03-25 16:20:06.632376309 +0100
+--- /dev/null	2025-03-31 15:59:49.907361957 +0200
++++ src/Makefile	2025-03-31 18:47:11.180124387 +0200
 @@ -0,0 +1,13 @@
-+all: sqlite.lib.so install/sqlite/sqlite3.h
++all: sqlite.lib.so include/sqlite3.h
 +
-+install/sqlite/sqlite3.h: install/include/sqlite
++include/sqlite3.h: include
 +	cp sqlite3.h $<
 +
-+install/include/sqlite:
++include:
 +	install -m 755 -d $@
 +
 +sqlite.lib.so: sqlite.o

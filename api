@@ -1,2 +1,2 @@
-install/include/sqlite/
+include/sqlite3.h
 sqlite3.pc
